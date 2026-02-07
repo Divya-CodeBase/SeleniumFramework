@@ -1,0 +1,19 @@
+[
+  {
+    "email": "testuser001@mail.com",
+    "password": "Learn@123",
+    "productName": "ADIDAS ORIGINAL",
+    "cvv": "123",
+    "coupon": "rahulshettyacademy",
+    "country": "India"
+  },
+  {
+    "email": "testuser001@mail.com",
+    "password": "Learn@123",
+    "productName": "ZARA COAT 3",
+    "cvv": "123",
+    "coupon": "rahulshettyacademy",
+    "country": "India"
+  }
+]
+

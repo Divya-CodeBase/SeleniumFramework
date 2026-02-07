@@ -1,0 +1,7 @@
+org/pageObjects/OrderPage.class
+org/pageObjects/PaymentPage.class
+org/pageObjects/LandingPage.class
+org/pageObjects/ProductCatalogue.class
+org/pageObjects/OrderHistoryPage.class
+org/pageObjects/CartPage.class
+org/utils/BaseMethods.class
