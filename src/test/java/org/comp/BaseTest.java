@@ -8,6 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.pageObjects.*;
 import org.testng.annotations.AfterMethod;
@@ -45,8 +46,17 @@ public class BaseTest {
         //String browserName = prop.getProperty("browser");
         url = prop.getProperty("url");
         if (browserName.equalsIgnoreCase("chrome")) {
+            ChromeOptions chromeOptions = new ChromeOptions();
+            String headless = System.getProperty("headless") != null
+                    ? System.getProperty("headless")
+                    : prop.getProperty("headless");
+            if (headless.equalsIgnoreCase("true")) {
+                chromeOptions.addArguments("--headless");
+                chromeOptions.addArguments("--window-size=1920,1080");
+            }
+
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(chromeOptions);
             landingPage = new LandingPage(driver);
 
         } else if (browserName.equalsIgnoreCase("edge")) {
@@ -55,6 +65,7 @@ public class BaseTest {
         }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
         return driver;
 
     }
