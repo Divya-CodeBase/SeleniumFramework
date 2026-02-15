@@ -3,11 +3,11 @@
     <listeners>
         <listener class-name="org.comp.Listeners"></listener>
     </listeners>
-    <!--<test name="E2E_Tests">
+    <test name="E2E_Tests">
         <classes>
             <class name="org.test.E2E_Test"/>
         </classes>
-    </test>-->
+    </test>
 
     <test name="ErrorValidation">
        <classes>
